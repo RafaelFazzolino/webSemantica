@@ -52,22 +52,22 @@ main: *.tex *.bib clean
 	pdflatex -interaction=batchmode main;\
 	pdflatex -interaction=batchmode main;\
 	echo "Feito.";\
-	
+
 optimize: main
 	clear
 	mv main.pdf "$(notdir $(PWD)).pdf"
 	@echo "Informações do arquivo gerado:" $(notdir $(PWD)).pdf
 	pdfinfo "$(notdir $(PWD)).pdf"
 	rm -rf main.pdf
-	
+
 # Limpa qualquer sujeira que reste após compilação
 # Útil que objetos de linguagens são incluidos e ficam relatando erros após retirados.
 clean:
 	rm -rf *.aux *.log *.toc *.bbl *.bak *.blg *.out *.lof *.lot *.lol *.glg *.glo *.ist *.xdy *.gls *.acn *.acr *.idx *.alg
-	
+
 buildclean:
 	rm -rf *.pdf
-	
+
 # Por algum motivo o *.pdf sumia da pasta. Gerado apenas para guardar uma copia de segurança na pasta
 backup: main.pdf
 	pdfopt main.pdf $(notdir $(PWD)).pdf
@@ -97,5 +97,5 @@ configure:
 	grep '\\cite{'  search.temp
 	rm -rv search.temp
 #	grep '^%' *.tex
-	
+
 .SILENT:
