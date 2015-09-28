@@ -5,4 +5,9 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.50 }
 
+\bibitem{berners2001semantic}
+\abntrefinfo{Berners-Lee et al.}{BERNERS-LEE et al.}{2001}
+{BERNERS-LEE, T. et al. The semantic web.
+\emph{Scientific american}, New York, NY, USA:, v.~284, n.~5, p. 28--37, 2001.}
+
 \end{thebibliography}
