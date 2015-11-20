@@ -1,0 +1,81 @@
+
+A solução proposta permitirá a representação semântica das informações contidas no Matricula Web, integrando às informações contidas no Portal da FGA. Além de garantir a conformidade com linked data e prosseguir com as iniciativas de web semântica dentro da Universidade de Brasília, seria possível relacionar cursos, departamentos, e Trabalhos de Conclusão de Curso de acordo com a área de estudo. Também será possível possibilitar a criação de um sistema de aconselhamento de disciplinas, de acordo com o perfil do estudante.
+
+A obtenção dos dados ocorrerá a partir da utilização de Web Scraping no Matrícula Web. A técnica de Web Scraping é o termo utilizado para descrever a atividade de extrair dados de sites, formatando-os da forma desejada e guardando no Banco de Dados. Esta técnica será utilizada no Matrícula Web por motivos de privacidade do sistema, nos deixando sem acesso aos dados de outra forma.
+
+Já no contexto do Portal FGA, os alunos da Universidade de Brasília possuem total acesso ao sistema, já que o mesmo é desenvolvido e mantido por alunos e professores do curso de Engenharia de Software. O Portal FGA é desenvolvido em linguagem Ruby e framework Rails, que também seria a linguagem utilizada para o desenvolvimento da API de Web Scraping.
+
+\subsection{Ferramentas Utilizadas} % (fold)
+\label{sub:ferramentas_utilizadas}
+	
+	Para o desenvolvimento de toda a solução, muitas ferramentas serão utilizadas. As mesmas estão descritas a seguir.
+
+\subsubsection{Protégé}
+
+	É a ferramenta líder de engenharia de ontologias, um editor livre e um sistema de aquisição de conhecimento. Ele fornece uma interface gráfica de usuário para definir ontologias, também inclui classificadores dedutivas para validar se os modelos são consistentes e inferir novas informações com base na análise de uma ontologia. Como Eclipse, Protégé é uma estrutura para que vários outros projetos sugerem plugins. 
+
+	Este aplicativo é escrito em Java e utiliza pesadamente balanço para criar a interface do usuário. Protégé tem recentemente mais de 200.000 usuários registrados e está sendo desenvolvido na Universidade de Stanford , em colaboração com a Universidade de Manchester e está disponível sob a Licença Pública Mozilla 1.1.(Dragan Gašević; Dragan Djurić; Vladan Devedžić (2009). Model Driven Engineering and Ontology Development (2nd ed.). Springer. p. 194. ISBN 978-3-642-00282-3.)
+
+\subsubsection{Ruby on Rails}
+
+	Ruby on Rails é um \textit{framework} livre da linguagem de programação \textit{Ruby}, que promete aumentar velocidade e facilidade no desenvolvimento de sites orientados a banco de dados, uma vez que é possível criar aplicações com base em estruturas pré-definidas e com gerenciamento de memória automático. As aplicações criadas utilizando o framework Rails são desenvolvidas com base no padrão de arquitetura MVC(\textit{Model-View-Controller}).
+% subsection ferramentas_utilizadas (end)
+
+\subsubsection{Personalização das Recomendações} % (fold)
+\label{ssub:personaliza_o_das_recomenda_es}
+
+	De forma a oferecer recomendações mais precisas, espera-se poder treinar o sistema construindo perfis de preferência para cada usuário. Além de inferir relações de dependência a partir das disciplinas já cursadas, também serão usados questionários para definir preferências pessoais, que serão usadas como parâmetros adicionais para a recomendação.
+
+	O questionário abaixo é um exemplo de uma série de questões que podem ser utilizadas para a criação de tal perfil.
+
+	\begin{enumerate}
+		\item Selecione a disciplina que demonstra a sua área interesse dentro de Engenharia de Software:
+
+			\begin{enumerate}
+				\item Engenharia de Requisitos
+				\item Desenho de Software
+				\item Fundamentos de Sistemas Operacionais
+				\item Interação Humano-Computador
+			\end{enumerate}
+
+		\item Qual sua maior dificuldade dentro de Engenharia de Software?
+
+			\underline{\hspace{13.8cm}}
+
+			\underline{\hspace{13.8cm}}.
+
+		\item Quantos créditos você deseja pegar no semestre?
+
+			\begin{enumerate}
+				\item 0 á 16;
+				\item 16 á 22;
+				\item 22 á 26;
+				\item 26 a 32.
+			\end{enumerate}
+
+		\item Qual sua disponibilidade de horário?
+			\begin{enumerate}
+				\item Matutino;
+				\item Vespertino;
+				\item Ambos.
+			\end{enumerate}
+
+		\item Qual sua disponibilidade de tempo para estudo?
+			\begin{enumerate}
+				\item Pouco;
+				\item Razoável;
+				\item Muito.
+			\end{enumerate}
+		\item Você gosta de trabalhar em equipe?
+			\begin{enumerate}
+				\item Sim;
+				\item Não.
+			\end{enumerate}
+		\item Você é proavito?
+			\begin{enumerate}
+				\item Sim;
+				\item Não.
+			\end{enumerate}
+	\end{enumerate}
+
+% subsubsection personaliza_o_das_recomenda_es (end)
